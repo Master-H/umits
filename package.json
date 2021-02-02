@@ -1,0 +1,86 @@
+{
+  "private": true,
+  "scripts": {
+    "start": "BUILD_ENV=dev umi dev",
+    "build": "COMPRESS=none  ANALYZE=1 umi build",
+    "build:test": "BUILD_ENV=test ANALYZE=1 HTML=none UMI_ENV=test umi build",
+    "build:pre": "BUILD_ENV=pre HTML=none ANALYZE=1 UMI_ENV=pre umi build",
+    "build:pro": "BUILD_ENV=pro HTML=none ANALYZE=1 UMI_ENV=pro umi build",
+    "postinstall": "umi generate tmp",
+    "prettier": "prettier --write '**/*.{js,jsx,tsx,ts,less,md,json}'",
+    "test": "umi-test",
+    "test:coverage": "umi-test --coverage",
+    "publish-please": "publish-please",
+    "prepublishOnly": "publish-please guard"
+  },
+  "husky": {
+    "hooks": {
+      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS",
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.{js,jsx}": [
+      "prettier --write",
+      "eslint --fix --ext .tsx  --ext .less --ext .js --ext .jsx --ext.md ./src"
+    ],
+    "*.ts?(x)": [
+      "prettier --parser=typescript --write ./src",
+      "eslint --fix --ext .tsx ./src"
+    ],
+    "*.{scss,less,styles,css,html}": [
+      "stylelint --fix",
+      "prettier --write"
+    ]
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
+  },
+  "dependencies": {
+    "@ant-design/icons": "^4.3.0",
+    "@ant-design/pro-layout": "^5.0.12",
+    "@umijs/preset-react": "1.x",
+    "@umijs/test": "^3.2.20",
+    "antd": "^4.8.0",
+    "antd-dayjs-webpack-plugin": "^1.0.1",
+    "axios": "^0.21.0",
+    "codemirror": "^5.58.3",
+    "dayjs": "^1.9.6",
+    "eslint-plugin-prettier": "^3.1.4",
+    "husky": "^4.3.0",
+    "lint-staged": "^10.0.7",
+    "loading": "^1.13.3",
+    "moment": "^2.29.1",
+    "react": "^16.12.0",
+    "react-codemirror2": "^7.2.1",
+    "react-dom": "^16.12.0",
+    "umi": "^3.2.20",
+    "yorkie": "^2.0.0"
+  },
+  "devDependencies": {
+    "@commitlint/cli": "^11.0.0",
+    "@commitlint/config-conventional": "^11.0.0",
+    "@typescript-eslint/eslint-plugin": "~4.0.1",
+    "@typescript-eslint/parser": "~4.0.1",
+    "cz-conventional-changelog": "^3.3.0",
+    "cz-customizable": "^6.3.0",
+    "eslint": "^7.17.0",
+    "eslint-config-airbnb": "^18.2.0",
+    "eslint-config-airbnb-typescript-prettier": "^4.1.0",
+    "eslint-config-prettier": "^6.11.0",
+    "eslint-import-resolver-typescript": "^2.3.0",
+    "eslint-plugin-import": "^2.22.0",
+    "eslint-plugin-jsx-a11y": "^6.3.1",
+    "eslint-plugin-react": "^7.20.6",
+    "eslint-plugin-react-hooks": "^4.1.2",
+    "prettier": "^1.19.1",
+    "roadhog-api-doc": "^1.1.2",
+    "stylelint": "^13.8.0",
+    "stylelint-config-prettier": "^8.0.2",
+    "stylelint-config-standard": "^20.0.0",
+    "stylelint-order": "^4.1.0",
+    "typescript": "^4.1.3"
+  }
+}

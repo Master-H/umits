@@ -1,0 +1,117 @@
+{
+  "files.exclude": { // 这些文件将不会显示在工作空间中
+    "**/.git": true,
+    "**/.svn": true,
+    "**/.hg": true,
+    "**/CVS": true,
+    "**/.DS_Store": true,
+  },
+  "search.exclude": {// 在使用搜索功能时，将这些文件夹/文件排除在外
+    "**/node_modules": true,
+    "**/bower_components": true,
+    "**/target": true,
+    "**/logs": true,
+  } , 
+  "git.autofetch":true,
+  "editor.tabSize": 4, // 1个tab等于4个空格
+  "editor.codeActionsOnSave": { // 保存自动格式化
+    // "source.fixAll": true,
+    "source.fixAll.eslint":true
+  },
+  "editor.formatOnSave": false,  // 每次保存的时候自动格式化；
+  "files.autoSave": "onFocusChange",//失去焦点后自动保存
+  "editor.suggestSelection":false,
+  // 注释插件,配置
+  //顶部注释配置 ctrl + command + i
+   "fileheader.customMade": {
+    "Author":"xxx",
+    "Date": "Do not edit",
+    "LastEditTime": "Do not edit",
+    "LastEditors": "xxx",
+    "!Description": "! "
+  },
+  // 函数注释,配置
+  "fileheader.cursorMode": {
+    "Author":"xxx",
+    "LastEditors": "xxx",
+    "description": "! ",
+    "return":"xx"
+  },
+  "fileheader.configObj": {
+    "createFileTime": true,
+    "language": {
+      "languagetest": {
+        "head": "/$$",
+        "middle": " $ @",
+        "end": " $/"
+      }
+    },
+    "autoAdd": true,
+    "autoAddLine": 100,
+    "autoAlready": true,
+    "annotationStr": {
+      "head": "/**",
+      "middle": " * @",
+      "end": " */",
+      "use": true
+    },
+    "headInsertLine": {
+      "php": 2,
+      "sh": 2
+    },
+    "beforeAnnotation": {
+      "文件后缀": "该文件后缀的头部注释之前添加某些内容"
+    },
+    "afterAnnotation": {
+      "文件后缀": "该文件后缀的头部注释之后添加某些内容"
+    },
+    "specialOptions": {
+      "特殊字段": "自定义比如LastEditTime/LastEditors"
+    },
+    "switch": {
+      "newlineAddAnnotation": true
+    },
+    "supportAutoLanguage": [],
+    "prohibitAutoAdd": [
+      "json"
+    ],
+    "prohibitItemAutoAdd": [
+      "项目的全称, 整个项目禁止自动添加头部注释, 可以使用快捷键添加"
+    ],
+    "moveCursor": true,
+    "dateFormat": "YYYY-MM-DD HH:mm:ss",
+    "atSymbol": [
+      "@",
+      "@"
+    ],
+    "atSymbolObj": {
+      "文件后缀": [
+        "头部注释@符号",
+        "函数注释@符号"
+      ]
+    },
+    "colon": [
+      ": ",
+      ": "
+    ],
+    "colonObj": {
+      "文件后缀": [
+        "头部注释冒号",
+        "函数注释冒号"
+      ]
+    },
+    "filePathColon": "路径分隔符替换",
+    "showErrorMessage": false,
+    "wideSame": false,
+    "wideNum": 13,
+    "CheckFileChange": false,
+    "createHeader": true,
+    "useWorker": false,
+    "designAddHead": false,
+    "headDesignName": "random",
+    "headDesign": false,
+    "cursorModeInternal": false
+  },
+  
+  
+}

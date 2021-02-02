@@ -1,0 +1,7 @@
+.typings.d.ts
+.package.json
+.global.d.ts
+.umirc.pre.ts
+.umirc.pro.ts
+.umirc.test.ts
+.umirc.ts
